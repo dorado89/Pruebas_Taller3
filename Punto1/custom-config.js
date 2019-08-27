@@ -8,7 +8,8 @@ module.exports = {
         passName: 'defaultPass',
         gatherers: [
             'card-gatherer',
-            'resp-gatherer'
+            'respend-gatherer',
+            'respstart-gatherer'
         ]
     }],
 

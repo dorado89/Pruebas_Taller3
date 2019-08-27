@@ -12,12 +12,12 @@ class LoadAudit extends Audit {
             description: 'Schedule API response initialized and ready',
             failureDescription: 'Schedule API response slow to initialize',
             helpText: 'Used to measure time from getSchedule to when the response',
-            requiredArtifacts: ['TimeToResp']
+            requiredArtifacts: ['TimeToRespEnd','TimeToRespStart']
         };
     }
 
     static audit(artifacts) {
-        const loadedTime = artifacts.TimeToResp;
+        const loadedTime = artifacts.TimeToRespEnd - artifacts.TimeToRespStart;
 
         const belowThreshold = loadedTime <= MAX_RESP_TIME;
 

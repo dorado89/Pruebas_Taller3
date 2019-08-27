@@ -116,9 +116,11 @@
         var url = 'https://api-ratp.pierre-grimaud.fr/v3/schedules/' + key;
 
         var request = new XMLHttpRequest();
+        window.apiRespTimeStart = performance.now();
         request.onreadystatechange = function () {
             if (request.readyState === XMLHttpRequest.DONE) {
                 if (request.status === 200) {
+                    window.apiRespTimeEnd = performance.now();
                     var response = JSON.parse(request.response);
                     var result = {};
                     result.key = key;
@@ -126,7 +128,6 @@
                     result.created = response._metadata.date;
                     result.schedules = response.result.schedules;
                     app.updateTimetableCard(result);
-                    window.apiRespTime = performance.now();
                 }
             } else {
                 // Return the initial weather forecast since no data is available.

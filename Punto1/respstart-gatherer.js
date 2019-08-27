@@ -2,19 +2,19 @@
 
 const Gatherer = require('lighthouse').Gatherer;
 
-class TimeToResp extends Gatherer {
+class TimeToRespStart extends Gatherer {
     afterPass(options) {
         const driver = options.driver;
 
-        return driver.evaluateAsync('window.apiRespTime')
+        return driver.evaluateAsync('window.apiRespTimeStart')
             .then(apiRespTime => {
                 if (!apiRespTime) {
 
-                    throw new Error('Unable to find card load metrics in page');
+                    throw new Error('Unable to find resp start metrics in page');
                 }
                 return apiRespTime;
             });
     }
 };
 
-module.exports = TimeToResp;
+module.exports = TimeToRespStart;
