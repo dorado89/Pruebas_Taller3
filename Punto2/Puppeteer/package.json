@@ -1,0 +1,25 @@
+{
+    "name": "Puppeteer",
+    "version": "1.0.0",
+    "keywords": [
+        "util",
+        "functional",
+        "server",
+        "client",
+        "browser"
+    ],
+    "author": "fox",
+    "contributors": [],
+    "dependencies": {},
+    "jest": {
+        "preset": "jest-puppeteer"
+    },
+    "scripts": {
+        "test": "jest"
+    },
+    "devDependencies": {
+        "jest": "^24.9.0",
+        "jest-puppeteer": "^4.3.0",
+        "puppeteer": "^1.19.0"
+    }
+}
