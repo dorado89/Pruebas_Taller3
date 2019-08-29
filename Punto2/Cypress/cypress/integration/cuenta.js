@@ -33,6 +33,7 @@ describe('Los estudiantes register', function() {
       cy.get('.cajaSignUp').contains('Registrarse').click();
       //Error: Ya existe un usuario registrado con el correo 'yyj7a4n2@sharklasers.com'
       cy.contains("Error: Ya existe un usuario registrado con el correo '"+correo+"'");
+      cy.clearCookies();
     });
 });
 function makeid(length) {

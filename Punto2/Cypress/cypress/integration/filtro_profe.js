@@ -20,6 +20,7 @@ describe("Los estudiantes filter", function() {
       cy.contains('Mario Linares Vasquez - Ingeniería de Sistemas').click();
       cy.get('.materias').find('input[name="id:MISO4208"]').click();
       cy.contains('en las materias seleccionadas');
+      cy.clearCookies();
     });
 });
 function makeid(length) {

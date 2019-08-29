@@ -19,6 +19,7 @@ describe("Los estudiantes teacher's page", function() {
       cy.get('form[role="search"]').click().find('input[role="combobox"]').type(profe);
       cy.contains('Mario Linares Vasquez - Ingeniería de Sistemas').click();
       cy.contains('Pruebas Automáticas');
+      cy.clearCookies();
     });
 });
 function makeid(length) {
